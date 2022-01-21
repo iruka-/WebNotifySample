@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web通知</title>
+  <link rel="manifest" href="manifest.json">
+  <script src='mysite.js'></script>
+  <script src='webpush.js'></script>
+</head>
+
+<body>
+  <h1>Web通知</h1>
+  <a href="javascript:allowWebPush()">Web通知を許可する</a><br>
+<hr>
+
+<p>
+	<img src="icon.png" width="96" height="96" />
+<br>
+デバッグ用：<br>
+
+    <button id="click">通知キーをサーバーに再登録する</button><br>
+	サーバー側CGIのデバッグ用です.
+<p>
+    <button id="view">自分の通知キーを見る</button> <br>
+<p>
+    <button id="ntest">Web通知のテスト</button><br>
+	10秒後に通知を送ります.
+
+    <script>
+      document.getElementById('view').addEventListener( 'click', onClickView);
+      document.getElementById('ntest').addEventListener('click', NotifyTest);
+      document.getElementById('click').addEventListener('click', SendTokenData);
+    </script>
+  </body>
+
+</html>
